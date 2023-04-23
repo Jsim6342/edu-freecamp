@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>휴대폰 인증 실습</title>
+    <script src="./signup.js"></script>
+</head>
+<body>
+    <h3>휴대폰 인증</h3>
+    <input type="text" id="phoneNumber1" oninput="checkPhoneNumber()"> -
+    <input type="text" id="phoneNumber2" oninput="checkPhoneNumber()"> -
+    <input type="text" id="phoneNumber3" oninput="checkPhoneNumber()">
+    <button id="createNumber" disabled="true" onclick="createRandomNumber()">인증번호발송</button>
+
+    <br>
+    <br>
+    발송된 인증번호: <span id="randomNumber"></span>
+    <br>
+    남은 시간: <span id="time"></span>
+
+    <br>
+    <br>
+    <input type="text" id="checkNumber">
+    <button id="submit" onclick="certificate()" disabled="true">인증하기</button>
+</body>
+</html>
