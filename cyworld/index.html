@@ -4,6 +4,7 @@
     <title>홍길동님의 미니홈피 :: 사이좋은 사람들, 싸이월드</title>
     <link rel="stylesheet" href="./styles/index.css">
     <script src="https://kit.fontawesome.com/05e89833f8.js" crossorigin="anonymous"></script>
+    <script src="./scripts/index.js"></script>
 </head>
 <body>
     <div class="background">
@@ -58,8 +59,14 @@
                         <div class="right_header_setting">사생활보호설정<i class="fas fa-caret-right arrow"></i></div>
                     </div>
                     <div class="wrapper_right_body">
-                        <iframe src="jukebox.html"></iframe>
+                        <iframe id="contentFrame" src="jukebox.html"></iframe>
                     </div>
+                </div>
+
+                <div class="navigation">
+                    <div class="navigation_item" id="menuHome" onclick="menuHome()">홈</div>
+                    <div class="navigation_item" id="menuGame" onclick="menuGame()">게임</div>
+                    <div class="navigation_item" id="menuJukebox" onclick="menuJukebox()">쥬크박스</div>
                 </div>
             </div>
         </div>
