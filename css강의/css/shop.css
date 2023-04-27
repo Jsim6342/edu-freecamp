@@ -1,0 +1,150 @@
+* {
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+header {
+    height: 250px;
+    background-image: url(../imgs/banner.jpg);
+    object-fit: cover;
+}
+
+header h1 {
+    text-align: center;
+    line-height: 250px;
+    color: white;
+    text-shadow: 2px 2px 2px gray;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+nav {
+    width: 250px;
+    height: 220px;
+    background-color: orange;
+    margin: 0px 10px;
+    border-radius: 5px;
+}
+
+.gnb {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-evenly;
+}
+
+
+
+section {
+    width: 1200px;
+}
+
+.gnb li {
+   font-weight: 500;
+    list-style: none;
+    font-size: 16px;
+    color: white;
+    
+}
+
+.register {
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    line-height: 50px;
+}
+
+.contents {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.item {
+    width: calc(25% - 20px);
+    aspect-ratio: 6 / 5;
+
+    /* width: 300px;
+    height: 200px; */
+    
+    color: white;
+    margin: 0px 5px 10px 5px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.item_text {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 15px;
+    z-index: 3;
+    opacity: 0;
+}
+
+.item p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.item span {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.item:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .2);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    opacity: 0;
+}
+
+.item:hover .item_text {
+    opacity: 1;
+}
+
+.item:hover:after {
+    opacity: 1;
+}
+
+.item:hover img {
+    transform: scale(1.1);
+    filter: blur(3px);
+}
+
+.item:after,
+.item img,
+.item .item_text {
+    transition: all 0.4s ease-in-out;
+}

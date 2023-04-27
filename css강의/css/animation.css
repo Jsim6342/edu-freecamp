@@ -1,0 +1,132 @@
+* {
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+
+
+.container {
+    padding: 20px;
+    width: 400px;
+    margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #eeeeee;
+}
+
+.contents {
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 30px;
+
+}
+
+.heart i {
+    font-size: 42px;
+    color: rgb(224, 0, 52);
+    animation: bounceHaert 1s ease-in-out infinite;
+  }
+
+@keyframes bounceHaert {
+    0% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+.star {
+    font-size: 42px;
+    color: rgb(255, 215, 57);
+    animation: rotateStar 1s ease-in-out alternate infinite;
+}
+
+@keyframes rotateStar {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+
+}
+
+.scroll-down {
+    width: 40px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .mouse {
+    width: 18px;
+    height: 32px;
+    border-radius: 10px;
+    border: 2px solid black;
+    margin-bottom: 5px;
+  }
+  
+  .mousePoint {
+    width: 4px;
+    height: 6px;
+    border-radius: 5px;
+    background: black;
+    transform: translate(5px, 4px);
+  }
+  
+  .scroll-down1 .mouse {
+    animation: bounceMouse 1.5s ease-in-out infinite;
+  }
+  
+  .scroll-down2 .mousePoint {
+    height: 4px;
+    border-radius: 50%;
+    animation: scroll-down 1.2s ease-in-out infinite;
+  }
+  
+  @keyframes scroll-down {
+    from {
+      transform: translate(5px, 4px);
+    }
+    to {
+      transform: translate(5px, 8px);
+    }
+  }
+  
+  @keyframes bounceMouse {
+    0% {
+      transform: translateY(-10px);
+    }
+    75% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
+
+.rotate {
+    font-size: 30px;
+    animation: rotating 2s linear infinite;
+}
+
+@keyframes rotating {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
