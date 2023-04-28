@@ -4,8 +4,10 @@
 }
 
 header {
+    width: 100%;
     height: 250px;
     background-image: url(../imgs/banner.jpg);
+    background-size: cover;
     object-fit: cover;
 }
 
@@ -17,6 +19,7 @@ header h1 {
 }
 
 .wrapper {
+    
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -44,16 +47,21 @@ nav {
 
 
 section {
-    width: 1200px;
+    width: 1024px;
 }
 
 .gnb li {
    font-weight: 500;
     list-style: none;
-    font-size: 16px;
-    color: white;
-    
+    font-size: 16px;    
 }
+
+.gnb li a{
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+ }
+ 
 
 .register {
     margin-top: 10px;
@@ -61,10 +69,29 @@ section {
     height: 50px;
     background-color: black;
     color: white;
-    text-align: center;
+    text-align: start;
     font-weight: 500;
     line-height: 50px;
+    padding: 0px 0px 0px 40px;
+    cursor: pointer;
 }
+
+.register a{
+    width: 80%; 
+    text-decoration: none;
+    color: white;
+}
+
+.register span {
+    position: absolute;
+    transform: translateX(20px);
+    transition: all .3s ease-in-out;
+}
+
+.register:hover span {
+    transform: translateX(60px);
+}
+
 
 .contents {
     display: flex;
@@ -84,6 +111,7 @@ section {
 
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .item img {
@@ -105,6 +133,7 @@ section {
     padding: 15px;
     z-index: 3;
     opacity: 0;
+    transform: translateY(60px);
 }
 
 .item p {
@@ -128,10 +157,12 @@ section {
     left: 0px;
     z-index: 2;
     opacity: 0;
+    
 }
 
 .item:hover .item_text {
     opacity: 1;
+    transform: translateY(0px);
 }
 
 .item:hover:after {
@@ -147,4 +178,107 @@ section {
 .item img,
 .item .item_text {
     transition: all 0.4s ease-in-out;
+}
+
+@media screen and (max-width: 767px) {
+    /* mobile */
+
+    header {
+        height: 150px;
+        background-image: url(../imgs/banner.jpg);
+        object-fit: cover;
+    }
+    
+    header h1 {
+        font-size: 24px;
+        text-align: center;
+        line-height: 150px;
+        color: white;
+        text-shadow: 2px 2px 2px gray;
+    }
+
+    .wrapper {
+        flex-direction: column;
+        margin: 0px;
+    }
+
+    .register {
+        display: none;
+    }
+
+    nav {
+        width: 100%;
+        height: 50px;
+        border-radius: 0px;
+        margin: 0px 0px 10px 0px;
+    }
+
+    .gnb {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    section {
+        width: 100vw;
+    }
+    
+
+    .item {
+        width: calc(50% - 20px);
+        aspect-ratio: 6 / 5;
+    
+        color: black;
+        margin: 0px 5px 10px 5px;
+    
+        position: static;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        overflow: visible;
+    }
+
+    
+    .item_text {
+        height: auto;
+        display: block;
+        position: static;
+        z-index: auto;
+        padding: 15px;
+        opacity: 1;
+        transform: translateY(0px);
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .item:after {
+        display: none;
+    }
+
+    .item p {
+        font-size: 16px;
+        font-weight: 600;
+    }
+    
+    .item span {
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* tablet */
+    .item {
+        width: calc(33% - 10px);
+    }
+
+    .register:hover span {
+        transform: translateX(40px);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    /* PC. hover 효과 지정 */
+    
 }
