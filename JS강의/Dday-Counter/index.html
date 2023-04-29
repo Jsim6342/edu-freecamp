@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<title>D-Day</title>
+		<script>
+			const createTargetDate = () => {
+				let year = document.querySelector("#year").value;
+				let month = document.querySelector("#month").value;
+				let day = document.querySelector("#day").value;
+				console.log(year, month, day);
+
+				// year + "-" + month + "-" + day
+				return `${year}-${month}-${day}`;
+			};
+
+			const countRemainDate = () => {
+				let inputDate = new Date(createTargetDate()).setHours(
+					0,
+					0,
+					0,
+					0
+				);
+				let nowDate = new Date();
+				let remainDate = (inputDate - nowDate) / 1000; // ms -> s로 단위 변경
+
+				let remainDay = Math.floor(remainDate / 3600 / 24);
+				let remainHour = Math.floor(remainDate / 3600) % 24;
+				let remainMinute = Math.floor(remainDate / 60) % 60;
+				let remainSecond = Math.floor(remainDate) % 60;
+
+				console.log(remainDay, remainHour, remainMinute, remainSecond);
+			};
+		</script>
+	</head>
+
+	<body>
+		<input type="text" id="year" />
+		<input type="text" id="month" />
+		<input type="text" id="day" />
+		<button onclick="countRemainDate()">버튼</button>
+	</body>
+</html>
