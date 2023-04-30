@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<title>D-Day</title>
+		<link rel="stylesheet" href="./countday.css" />
+		<script src="./countday.js" defer></script>
+	</head>
+
+	<body>
+		<div class="headline">
+			<h1>D-Day</h1>
+			<p>'년, 월, 일'을 입력하면, 남은 시간을 출력합니다.</p>
+		</div>
+		<div id="count-box" class="count-box">
+			<div class="count">
+				<span id="return-day">0</span>
+				<span>일</span>
+			</div>
+			<div class="count">
+				<span id="return-hour">0</span>
+				<span>시간</span>
+			</div>
+			<div class="count">
+				<span id="return-minute">0</span>
+				<span>분</span>
+			</div>
+			<div class="count">
+				<span id="return-second">0</span>
+				<span>초</span>
+			</div>
+		</div>
+		<div id="message"></div>
+		<div class="input-box">
+			년: <input type="text" id="year" /> 월:
+			<input type="text" id="month" /> 일: <input type="text" id="day" />
+		</div>
+		<button id="count-start" class="push-button" onclick="starter()">
+			카운트다운 시작!
+		</button>
+		<button
+			id="count-reset"
+			class="push-button"
+			onclick="setClearInterval()"
+		>
+			타이머 초기화!
+		</button>
+	</body>
+</html>
