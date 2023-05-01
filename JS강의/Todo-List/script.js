@@ -24,7 +24,6 @@ const createTodoList = () => {
 	todoInput.value = "";
 
 	saveItem();
-	console.log();
 };
 
 const checkKeyCode = () => {
