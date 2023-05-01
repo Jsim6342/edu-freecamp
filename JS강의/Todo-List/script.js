@@ -1,8 +1,12 @@
 const todoInput = document.getElementById("todo-input");
 const todoList = document.getElementById("todo-list");
 
-const createTodoList = () => {
-	const inputData = todoInput.value;
+
+const createTodoList = (savedData) => {
+	let inputData = todoInput.value;
+	if (savedData !== undefined) {
+		inputData = savedData.contents;
+	}
 
 	const newLi = document.createElement("li");
 	const newSpan = document.createElement("span");
@@ -10,11 +14,17 @@ const createTodoList = () => {
 
 	newBtn.addEventListener("click", () => {
 		newLi.classList.toggle("complete");
+		saveItem();
 	});
 
 	newLi.addEventListener("dblclick", () => {
 		newLi.remove();
+		saveItem();
 	});
+
+	if (savedData?.complete === true) {
+		newLi.classList.add('complete');
+	}
 
 	newSpan.textContent = inputData;
 	newLi.appendChild(newBtn);
@@ -37,6 +47,7 @@ const deleteAll = () => {
 	for (let li of liList) {
 		li.remove();
 	}
+	saveItem();
 };
 
 const saveItem = () => {
@@ -51,5 +62,19 @@ const saveItem = () => {
 		saveItems.push(todoObj);
 	}
 
-	console.log(saveItems);
+	if(saveItems.length === 0) {
+		localStorage.removeItem('todo-list');
+	}
+	else {
+		localStorage.setItem('todo-list', JSON.stringify(saveItems));
+	}
+	
+
 };
+
+const savedTodoList = JSON.parse(localStorage?.getItem("todo-list"));
+console.log(savedTodoList);
+
+for(let i = 0; i < savedTodoList.length; i++) {
+	createTodoList(savedTodoList[i]);
+}
